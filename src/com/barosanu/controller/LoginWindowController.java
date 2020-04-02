@@ -1,5 +1,7 @@
 package com.barosanu.controller;
 
+import com.barosanu.EmailManager;
+import com.barosanu.view.ViewFactory;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
@@ -7,7 +9,7 @@ import javafx.scene.control.TextField;
 /**
  * Created by Arek on 01.04.2020.
  */
-public class LoginWindowController {
+public class LoginWindowController extends BaseController {
 
     @FXML
     private TextField emailAddressField;
@@ -17,6 +19,10 @@ public class LoginWindowController {
 
     @FXML
     private Label errorLabel;
+
+    public LoginWindowController(EmailManager emailManager, ViewFactory viewFactory, String fxmlName) {
+        super(emailManager, viewFactory, fxmlName);
+    }
 
     @FXML
     void loginButtonAction() {
