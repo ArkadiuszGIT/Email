@@ -11,6 +11,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Slider;
+import javafx.stage.Stage;
 import javafx.util.StringConverter;
 
 import java.net.URL;
@@ -18,24 +19,27 @@ import java.util.ResourceBundle;
 
 public class OptionsWindowController extends BaseController implements Initializable {
 
+    public OptionsWindowController(EmailManager emailManager, ViewFactory viewFactory, String fxmlName) {
+        super(emailManager, viewFactory, fxmlName);
+    }
+
     @FXML
     private Slider fontSizePicker;
 
     @FXML
     private ChoiceBox<ColorTheme> themePicker;
 
-    public OptionsWindowController(EmailManager emailManager, ViewFactory viewFactory, String fxmlName) {
-        super(emailManager, viewFactory, fxmlName);
-    }
-
     @FXML
     void applyBtnAction() {
-
+        viewFactory.setColorTheme(themePicker.getValue());
+        viewFactory.setFontSize(FontSize.values()[(int)(fontSizePicker.getValue())]);
+        viewFactory.updateStyles();
     }
 
     @FXML
     void cancelBtnAction() {
-
+        Stage stage = (Stage) fontSizePicker.getScene().getWindow();
+        viewFactory.closeStage(stage);
     }
 
     @Override
