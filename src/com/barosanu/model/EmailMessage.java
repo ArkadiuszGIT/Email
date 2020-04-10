@@ -1,9 +1,7 @@
 package com.barosanu.model;
 
-import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleObjectProperty;
 import javafx.beans.property.SimpleStringProperty;
-import javafx.css.Size;
 
 import javax.mail.Message;
 import java.util.Date;
@@ -57,7 +55,7 @@ public class EmailMessage {
     }
 
     public void setRead(boolean read){
-        isRead =read;
+        isRead = read;
     }
     public Message getMessage(){
         return this.message;
