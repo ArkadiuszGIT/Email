@@ -21,7 +21,7 @@ import java.util.ResourceBundle;
 public class ComposeMessageController extends BaseController implements Initializable {
 
     @FXML
-    private TextField recipientTextFIeld;
+    private TextField recipientTextField;
 
     @FXML
     private TextField subjectTextField;
@@ -40,7 +40,7 @@ public class ComposeMessageController extends BaseController implements Initiali
         EmailSenderService emailSenderService = new EmailSenderService(
                 emailAccountChoice.getValue(),
                 subjectTextField.getText(),
-                recipientTextFIeld.getText(),
+                recipientTextField.getText(),
                 htmlEditor.getHtmlText()
         );
         emailSenderService.start();
@@ -48,7 +48,7 @@ public class ComposeMessageController extends BaseController implements Initiali
             EmailSendingResult emailSendingResult = emailSenderService.getValue();
             switch (emailSendingResult) {
                 case SUCCESS:
-                    Stage stage = (Stage) recipientTextFIeld.getScene().getWindow();
+                    Stage stage = (Stage) recipientTextField.getScene().getWindow();
                     viewFactory.closeStage(stage);
                     break;
                 case FAILED_BY_PROVIDER:
