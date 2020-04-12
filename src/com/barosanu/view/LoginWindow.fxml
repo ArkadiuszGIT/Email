@@ -6,13 +6,14 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="423.0" prefWidth="447.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane prefHeight="325.0" prefWidth="510.0" styleClass="container" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Button layoutX="177.0" layoutY="304.0" mnemonicParsing="false" onAction="#loginButtonAction" prefHeight="63.0" prefWidth="94.0" text="Login" />
-      <Label layoutX="32.0" layoutY="128.0" text="Email Address" />
-      <Label layoutX="32.0" layoutY="164.0" prefHeight="17.0" prefWidth="74.0" text="Password" />
-      <TextField fx:id="emailAddressField" layoutX="113.0" layoutY="124.0" prefHeight="25.0" prefWidth="304.0" />
-      <PasswordField fx:id="passwordField" layoutX="113.0" layoutY="160.0" prefHeight="25.0" prefWidth="304.0" />
-      <Label fx:id="errorLabel" layoutX="210.0" layoutY="384.0" />
+      <Button layoutX="195.0" layoutY="213.0" mnemonicParsing="false" onAction="#loginButtonAction" prefHeight="55.0" prefWidth="121.0" text="Login" />
+      <Label layoutX="27.0" layoutY="132.0" text="Email Address" />
+      <Label layoutX="27.0" layoutY="173.0" prefHeight="16.0" prefWidth="93.0" text="Password" />
+      <TextField fx:id="emailAddressField" layoutX="130.0" layoutY="127.0" prefHeight="26.0" prefWidth="353.0" />
+      <PasswordField fx:id="passwordField" layoutX="130.0" layoutY="168.0" prefHeight="26.0" prefWidth="353.0" />
+      <Label fx:id="errorLabel" layoutX="27.0" layoutY="290.0" prefHeight="26.0" prefWidth="382.0" styleClass="errorText" />
+      <Label layoutX="60.0" layoutY="33.0" prefHeight="55.0" prefWidth="436.0" styleClass="big" text="Welcome to the best email client!" />
    </children>
 </AnchorPane>
